@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 定义mapper子节点只能为 select 或者update  可以有零个或多个 -->
+<!ELEMENT mapper (select* | update*)>
+
+<!-- 定义mapper属性1为namespace为字符类型，非必须的 -->
+<!-- 定义mapper属性2为collection为字符类型，是必须的 -->
+<!-- 定义mapper属性3为item为字符类型，是必须的 -->
+<!-- 定义mapper属性4为type为枚举类型，是必须的（好像没作用）-->
+<!ATTLIST mapper
+namespace CDATA #IMPLIED
+collection CDATA #REQUIRED
+item CDATA #FIXED "item"
+type (type1 |type2 |type3) #REQUIRED
+>
+
+<!ATTLIST foreach
+collection CDATA #REQUIRED
+item CDATA #IMPLIED
+index CDATA #IMPLIED
+>
+
+<!ATTLIST choose
+collection CDATA #REQUIRED
+item CDATA #IMPLIED
+index CDATA #IMPLIED
+>
+
+<!ELEMENT select (foreach | choose)*>
+<!ATTLIST select
+id CDATA #REQUIRED
+parameterMap CDATA #IMPLIED
+resultSetType (FORWARD_ONLY) #IMPLIED
+>
+
+<!ELEMENT update (foreach | choose)*>
+<!ATTLIST update
+id CDATA #REQUIRED
+parameterMap CDATA #IMPLIED
+resultSetType (FORWARD_ONLY) #IMPLIED
+>
+

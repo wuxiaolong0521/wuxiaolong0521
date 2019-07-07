@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- mapper为根节点元素名称     PUBLIC后第一个为dtd名称   后为dtd路径 -->
+<!DOCTYPE mapper PUBLIC "dtdtest" "dtdtest.dtd">
+
+<mapper collection="" type="type2" >
+	<select id="" ></select>
+</mapper>
